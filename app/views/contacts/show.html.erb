@@ -1,24 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
-
-<p>
-  <strong>Telp:</strong>
-  <%= @contact.telp %>
-</p>
-
-<p>
-  <strong>Favourite:</strong>
-  <%= @contact.favourite %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<div class="container">
+    <div class="row">
+      <br />
+      <br />
+      <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+        <% if(notice) %>
+        <div class="alert alert-info"><%= notice %></div>
+        <% end %>
+        
+        <table class="table table-bordered table-stripped">
+          <tbody>
+            <tr>
+              <td><strong>Name:</strong></td>
+              <td><%= @contact.name %></td>
+            </tr>
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td><%= @contact.email %></td>
+            </tr>
+            <tr>
+              <td><strong>Telephone:</strong></td>
+              <td><%= @contact.telp %></td>
+            </tr>
+            <tr>
+              <td><strong>Favourite:</strong></td>
+              <td><%= @contact.favourite %></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-warning' %> |
+        <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+</div>
